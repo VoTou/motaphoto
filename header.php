@@ -11,7 +11,6 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce' ); ?></a>
-
 	<header id="masthead" class="site-header">
     <?php
     if (function_exists('the_custom_logo')) {

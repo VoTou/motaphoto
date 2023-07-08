@@ -1,3 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* {
+    font-family: 'Space Mono', monospace, sans-serif;  
+}
+  
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 150px;
+    height: 80px;
+    background-color: white;
+}
+
+.menu {
+    display: flex;
+}
+
 li {
     list-style-type: none;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+
+}
+.menu-item {
+    text-transform: uppercase;
+
+}
+#menu-menu-principal .menu-item {
+    margin-left: 45px;
+}
+
+#site-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    text-align: start;
+
+}
+
+#site-footer a {
+    margin-right: 85px;
+}
+
+.text-mention {
+    text-transform: uppercase;    
+}
+
+
+

@@ -7,6 +7,5 @@
 		echo do_shortcode('[contact-form-7 id="38" title="Formulaire Contact Motaphoto"]');
 		?>
     </div>
-    <a href="#" class="closebtn">×</a>
   </div>
 </div> 

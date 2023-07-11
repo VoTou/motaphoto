@@ -20,3 +20,19 @@ btnContact.addEventListener("click", (e) => {
 modal.addEventListener("click", () => {
   history.replaceState(null, document.title, window.location.pathname);
 });
+
+// Récupérer le champ Référence pour l'afficher dans le champ du formulaire "Réf. photo"
+(function ($) {
+  $(document).ready(function(){
+    let reference = $('#ref').data('reference');
+    $("#ref .wpcf7-form-control").val(reference);
+  });
+})(jQuery);
+
+// Désactive la possibilité de modifier le champ "Réf photo"
+if (document.body.classList.contains('single-photo')) {
+  const inputs = document.querySelectorAll('.wpcf7-disabled');
+  inputs.forEach(function(input) {
+      input.setAttribute('disabled', 'disabled');
+  });
+}

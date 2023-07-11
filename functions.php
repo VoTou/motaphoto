@@ -18,7 +18,8 @@ add_action( 'wp_enqueue_scripts', 'motaphoto_enqueue_styles' );
 
 // Déclaration des scripts
 function motaphoto_enqueue_scripts() {
-    wp_enqueue_script( 'scripts-js', get_template_directory_uri() . '/assets/js/scripts.js', array(), 1.0, true);
+    wp_enqueue_script('jquery');
+    wp_enqueue_script( 'scripts-js', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), 1.0, true);
 }
 add_action( 'wp_enqueue_scripts', 'motaphoto_enqueue_scripts' );
 

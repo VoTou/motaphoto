@@ -1,57 +1,179 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
 * {
-    font-family: 'Space Mono', monospace, sans-serif;  
+  font-family: "Space Mono", monospace, sans-serif;
 }
-  
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 150px;
-    height: 80px;
-    background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 150px;
+  height: 80px;
+  background-color: white;
 }
 
 .menu {
-    display: flex;
+  display: flex;
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 a {
-    text-decoration: none;
-    color: black;
-
+  text-decoration: none;
+  color: black;
 }
 .menu-item {
-    text-transform: uppercase;
-
+  text-transform: uppercase;
 }
 #menu-menu-principal .menu-item {
-    margin-left: 45px;
+  margin-left: 45px;
 }
 
 #site-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-top: solid 2px black;
 }
 
 ul {
-    text-align: start;
-
+  text-align: start;
 }
 
 #site-footer a {
-    margin-right: 85px;
+  margin-right: 85px;
 }
 
 .text-mention {
-    text-transform: uppercase;    
+  text-transform: uppercase;
 }
 
 
+/* Barre de défilement principale */
+::-webkit-scrollbar {
+  width: 10px; /* Largeur de la barre de défilement */
+}
 
+/* Curseur de la barre de défilement */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Couleur du curseur */
+}
+
+/* Fond de la barre de défilement */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Couleur de fond de la barre de défilement */
+}
+
+/* Animation d'entrée modale */
+@keyframes slideDownFadeIN {
+    from {top:-100px;opacity: 0;}
+    to {top:0px;opacity:1;}
+}
+
+/* Foncer l'arrière-plan de la fenêtre modale */
+.modal {
+  display: none; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Afficher la fenêtre modale lorsqu'elle est ciblée par un lien supprimer */
+.modal:target {
+  display: table;
+  position: absolute;
+}
+
+/* la fenêtre modale  */
+.modal-dialog {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* Le contenu de la modale */
+.modal-dialog .modal-content {
+  margin: auto;
+  background-color: white;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  border: 4px black solid;
+  text-align: justify;
+  max-width: 595px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
+  animation-name: slideDownFadeIN;
+  animation-duration: 0.5s;
+}
+
+/* Bouton servant à fermer la fenêtre modale */
+.closebtn {
+  text-decoration: none;
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+  color: black;
+}
+
+.closebtn:hover,
+.closebtn:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+    background: cover;
+    margin: 10px 0 20px 0;
+}
+
+.wpcf7-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wpcf7-form label {
+    text-transform: uppercase;
+}
+
+
+.wpcf7-form-control {
+    max-width: 300px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #B8BBC2;
+}
+
+.wpcf7-form-control-wrap .wpcf7-textarea {
+    height: 210px;
+    resize: none;
+}
+
+.wpcf7-submit {
+    cursor: pointer;
+    height: 50px;
+    width: 300px;
+    border: none;
+    border-radius: 2px;
+    background: #D8D8D8;
+}

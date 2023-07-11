@@ -1,5 +1,6 @@
 
         <footer id="site-footer" class="header-footer-group">
+            <?php get_template_part( 'templates-part/contact-modal' ); ?>
             <?php
                 /**
                 * Affiche le menu "Menu principal" enregistré au préalable.
@@ -12,7 +13,6 @@
                 ?>
               <p class="text-mention">Tous droits réservés<p>
         </footer><!-- #site-footer -->
-        <?php get_template_part( 'template-parts/contact-modal' ); ?>
       <?php wp_footer(); ?>
    </body>
 </html>

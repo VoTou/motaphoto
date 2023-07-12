@@ -17,7 +17,7 @@
         the_custom_logo();
     }
     ?>
-    <nav role="navigation" aria-label="<?php _e('Menu principal', 'text-domain'); ?>"><?php 
+    <nav role="navigation" class="nav-header" aria-label="<?php _e('Menu principal', 'text-domain'); ?>"><?php 
         /**
          * Affiche le menu "Menu principal" enregistré au préalable.
          */

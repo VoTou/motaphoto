@@ -13,6 +13,8 @@ add_action('init', 'motaphoto_register_menus');
 // Déclaration des styles
 function motaphoto_enqueue_styles() {
     wp_enqueue_style( 'theme_style', get_template_directory_uri() . '/assets/css/theme.css');
+    wp_enqueue_style( 'single-photo', get_template_directory_uri() . '/assets/css/single-photo.css');
+    wp_enqueue_style( 'front-page', get_template_directory_uri() . '/assets/css/front-page.css');
 }
 add_action( 'wp_enqueue_scripts', 'motaphoto_enqueue_styles' );
 
@@ -36,10 +38,10 @@ function motaphoto_setup() {
 add_action('after_setup_theme', 'motaphoto_setup');
 
 
-//Fonction pour ajouter le bouton Contact pour la modale
+//Fonction pour ajouter le bouton Contact dans le menu pour afficher la modale
 function contact_btn( $items, $args ) {
     if ( $args->theme_location === 'main-menu' ) {
-        $items .= '<a href="#id01" class="contact-btn menu-item">Contact</a>';
+        $items .= '<a href="#id01" class="contact-btn menu-item contact-close">Contact</a>';
     }
     return $items;
 }

@@ -1,5 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
+/* Barre de défilement principale */
+::-webkit-scrollbar {
+  width: 10px; /* Largeur de la barre de défilement */
+}
+
+/* Curseur de la barre de défilement */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Couleur du curseur */
+}
+
+/* Fond de la barre de défilement */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Couleur de fond de la barre de défilement */
+}
+
+/* Animation d'entrée modale */
+@keyframes slideDownFadeIN {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
 * {
   font-family: "Space Mono", monospace, sans-serif;
 }
@@ -11,16 +38,24 @@ body {
 
 main {
   margin: 0 auto;
-  max-width: 1600px;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 150px;
+  padding: 0 5%;
   height: 80px;
   background-color: white;
+}
+
+.burger {
+  cursor: pointer;
+  display: none;
+}
+
+.nav-header a:hover {
+  font-weight: bold;
 }
 
 .menu {
@@ -35,11 +70,21 @@ a {
   text-decoration: none;
   color: black;
 }
+
 .menu-item {
   text-transform: uppercase;
 }
 #menu-menu-principal .menu-item {
   margin-left: 45px;
+}
+
+.color-change-btn {
+  transition: all 0.3s ease;
+}
+
+.color-change-btn:hover {
+  background-color: #000;
+  color: white;
 }
 
 #site-footer {
@@ -58,42 +103,23 @@ ul {
   margin-right: 85px;
 }
 
+#site-footer a:hover {
+  font-weight: bold;
+}
+
 .text-mention {
   text-transform: uppercase;
 }
 
-
-/* Barre de défilement principale */
-::-webkit-scrollbar {
-  width: 10px; /* Largeur de la barre de défilement */
-}
-
-/* Curseur de la barre de défilement */
-::-webkit-scrollbar-thumb {
-  background-color: #888; /* Couleur du curseur */
-}
-
-/* Fond de la barre de défilement */
-::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Couleur de fond de la barre de défilement */
-}
-
-/* Animation d'entrée modale */
-@keyframes slideDownFadeIN {
-    from {top:-100px;opacity: 0;}
-    to {top:0px;opacity:1;}
-}
-
 /* Foncer l'arrière-plan de la fenêtre modale */
 .modal {
-  display: none; 
+  display: none;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .modal:target {
@@ -105,6 +131,8 @@ ul {
 .modal-dialog {
   display: table-cell;
   vertical-align: middle;
+  width: 100%;
+  height: 100%;
 }
 
 /* Le contenu de la modale */
@@ -118,30 +146,15 @@ ul {
   text-align: justify;
   max-width: 595px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
- 
+  overflow: hidden;
+
   animation-name: slideDownFadeIN;
   animation-duration: 0.5s;
 }
 
-/* Bouton servant à fermer la fenêtre modale */
-.closebtn {
-  text-decoration: none;
-  float: right;
-  font-size: 35px;
-  font-weight: bold;
-  color: black;
-}
-
-.closebtn:hover,
-.closebtn:focus {
-  color: red;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .modal-header {
-    background: cover;
-    margin: 10px 0 20px 0;
+  background: contain;
+  margin: 10px 0 20px 0;
 }
 
 .wpcf7-not-valid-tip {
@@ -151,38 +164,123 @@ ul {
 }
 
 .wpcf7-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .wpcf7-form label {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
-
 .wpcf7-form-control {
-    max-width: 300px;
-    height: 40px;
-    border-radius: 8px;
-    border: 1px solid #B8BBC2;
+  max-width: 300px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #b8bbc2;
 }
 
 .wpcf7-form-control-wrap .wpcf7-textarea {
-    height: 210px;
-    resize: none;
+  height: 210px;
+  resize: none;
 }
 
 .wpcf7-submit {
-    cursor: pointer;
-    height: 50px;
-    width: 300px;
-    border: none;
-    border-radius: 2px;
-    background: #D8D8D8;
+  cursor: pointer;
+  height: 50px;
+  width: 300px;
+  border: none;
+  border-radius: 2px;
+  background: #d8d8d8;
 }
 
 .wpcf7-spinner {
   display: none;
 }
+
+.wpcf7-response-output {
+  font-size: 14px;
+  margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+
+  .burger {
+    display: block;
+  }
+  .burger::before {
+    content: "\2630";
+  }
+
+  .active .burger::before {
+    content: "\2715";
+  }
+
+  #menu-menu-principal .menu-item {
+    margin-left: 0;
+  }
+
+  nav ul {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    left: -100%;
+    z-index: 10;
+    top: 126px;
+    margin: 0;
+    flex-direction: column;
+    background: #E00000;
+    width: 100%;
+    height: calc(100% - 126px);
+    text-align: center;
+    transition: 0.25s;
+  }
+
+  nav a {
+    color: white;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;  
+  }
+
+  nav.active li {
+    padding-bottom: 20px;
+  }
+
+  nav.active ul {
+    left: 0;
+  }
+
+  .container-btn-center .btn-style {
+    min-width: 250px;
+  }
+  #site-footer {
+    padding-top: 15px;
+    flex-direction: column;
+  }
+
+  #menu-menu-pied-de-page {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  #site-footer a {
+    margin-right: 0;
+  }
+
+  #site-footer .text-mention {
+    margin-top: 0;
+  }
+
+  ul {
+    padding: 0;
+  }
+}
+
+

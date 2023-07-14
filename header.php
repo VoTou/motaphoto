@@ -17,7 +17,7 @@
         the_custom_logo();
     }
     ?>
-    <nav role="navigation" class="nav-header" aria-label="<?php _e('Menu principal', 'text-domain'); ?>"><?php 
+    <nav id="nav" role="navigation" class="nav-header" aria-label="<?php _e('Menu principal', 'text-domain'); ?>"><?php 
         /**
          * Affiche le menu "Menu principal" enregistré au préalable.
          */
@@ -27,6 +27,7 @@
             'walker'         => new A11y_Walker_Nav_Menu()
         ]);
     ?>
+    <div class="burger"></div>
     </nav>
 	</header><!-- #masthead -->
 

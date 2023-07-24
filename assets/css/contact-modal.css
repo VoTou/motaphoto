@@ -1,0 +1,147 @@
+/* Foncer l'arrière-plan de la fenêtre modale */
+.modal {
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal:target {
+  display: table;
+  position: fixed;
+}
+
+/* la fenêtre modale  */
+.modal-dialog {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+/* Le contenu de la modale */
+.modal-dialog .modal-content {
+  margin: auto;
+  margin-top: 40px;
+  background-color: white;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  border: 4px black solid;
+  text-align: justify;
+  width: 30vw;
+  min-width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+
+  animation-name: slideDownFadeIN;
+  animation-duration: 0.5s;
+}
+
+.modal-header {
+  background: contain;
+  margin: 10px 0 20px 0;
+}
+
+.modal-close {
+  cursor: pointer;
+  -webkit-text-stroke: 2px black;
+  position: absolute;
+  right: 3%;
+  top: 13%;
+  color: white;
+  font-size: 50px;
+}
+
+.modal-close:hover {
+  color: black;
+}
+
+.wpcf7-not-valid-tip {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: none;
+}
+
+.wpcf7-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wpcf7-form label {
+  text-transform: uppercase;
+}
+
+.wpcf7-form-control {
+  width: 15vw;
+  min-width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #b8bbc2;
+}
+
+.wpcf7-form-control-wrap .wpcf7-textarea {
+  height: 150px;
+  resize: none;
+}
+
+.wpcf7-submit {
+  cursor: pointer;
+  height: 50px;
+  width: 15vw;
+  min-width: 200px;
+  border: none;
+  border-radius: 2px;
+  background: #d8d8d8;
+}
+
+.wpcf7-spinner {
+  display: none;
+}
+
+.wpcf7-response-output {
+  font-size: 14px;
+  margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+
+  .modal {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+  }
+
+  .modal-close {
+    right: 2%;
+    top: 7%;
+  }
+
+  .modal-header {
+    width: 100vw;
+    margin: 10px 0 20px 0;
+  }
+
+  /* Le contenu de la modale */
+  .modal-dialog .modal-content {
+    width: calc(100vw - 8px);
+  }
+
+  .wpcf7-submit {
+    width: 75vw;
+    min-width: 200px;
+  }
+
+  .wpcf7-form-control {
+    width: 75vw;
+    min-width: 200px;
+  }
+}

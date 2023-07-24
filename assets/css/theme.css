@@ -111,106 +111,14 @@ ul {
   text-transform: uppercase;
 }
 
-/* Foncer l'arrière-plan de la fenêtre modale */
-.modal {
-  display: none;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.75);
-}
-
-.modal:target {
-  display: table;
-  position: absolute;
-}
-
-/* la fenêtre modale  */
-.modal-dialog {
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
-  height: 100%;
-}
-
-/* Le contenu de la modale */
-.modal-dialog .modal-content {
-  margin: auto;
-  background-color: white;
-  position: relative;
-  padding: 0;
-  outline: 0;
-  border: 4px black solid;
-  text-align: justify;
-  max-width: 595px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  overflow: hidden;
-
-  animation-name: slideDownFadeIN;
-  animation-duration: 0.5s;
-}
-
-.modal-header {
-  background: contain;
-  margin: 10px 0 20px 0;
-}
-
-.wpcf7-not-valid-tip {
-  position: absolute;
-  font-family: Arial, Helvetica, sans-serif;
-  text-transform: none;
-}
-
-.wpcf7-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.wpcf7-form label {
-  text-transform: uppercase;
-}
-
-.wpcf7-form-control {
-  max-width: 300px;
-  height: 40px;
-  border-radius: 8px;
-  border: 1px solid #b8bbc2;
-}
-
-.wpcf7-form-control-wrap .wpcf7-textarea {
-  height: 210px;
-  resize: none;
-}
-
-.wpcf7-submit {
-  cursor: pointer;
-  height: 50px;
-  width: 300px;
-  border: none;
-  border-radius: 2px;
-  background: #d8d8d8;
-}
-
-.wpcf7-spinner {
-  display: none;
-}
-
-.wpcf7-response-output {
-  font-size: 14px;
-  margin-top: 0 !important;
-}
-
 @media (max-width: 768px) {
-
   .burger {
     display: block;
+    margin-right: 20px;
   }
   .burger::before {
     content: "\2630";
+    font-size: 25px;
   }
 
   .active .burger::before {
@@ -230,7 +138,7 @@ ul {
     top: 126px;
     margin: 0;
     flex-direction: column;
-    background: #E00000;
+    background: #e00000;
     width: 100%;
     height: calc(100% - 126px);
     text-align: center;
@@ -242,7 +150,7 @@ ul {
     font-size: 44px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;  
+    line-height: normal;
   }
 
   nav.active li {
@@ -282,5 +190,3 @@ ul {
     padding: 0;
   }
 }
-
-

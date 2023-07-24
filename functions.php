@@ -13,15 +13,17 @@ add_action('init', 'motaphoto_register_menus');
 // Déclaration des styles
 function motaphoto_enqueue_styles() {
     wp_enqueue_style( 'theme_style', get_template_directory_uri() . '/assets/css/theme.css');
+    wp_enqueue_style( 'contact_modal', get_template_directory_uri() . '/assets/css/contact-modal.css');
     wp_enqueue_style( 'single-photo', get_template_directory_uri() . '/assets/css/single-photo.css');
     wp_enqueue_style( 'front-page', get_template_directory_uri() . '/assets/css/front-page.css');
+    wp_enqueue_style( 'archive-page', get_template_directory_uri() . '/assets/css/archive.css');
 }
 add_action( 'wp_enqueue_scripts', 'motaphoto_enqueue_styles' );
 
 // Déclaration des scripts
 function motaphoto_enqueue_scripts() {
-    wp_enqueue_script('jquery');
     wp_enqueue_script( 'scripts-js', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), 1.0, true);
+    wp_enqueue_script( 'nav-js', get_template_directory_uri() . '/assets/js/navigation.js', true);
 }
 add_action( 'wp_enqueue_scripts', 'motaphoto_enqueue_scripts' );
 
@@ -47,6 +49,17 @@ function contact_btn( $items, $args ) {
 }
 
 add_filter( 'wp_nav_menu_items', 'contact_btn', 10, 2 );
+
+// Fonction qui modifie les arguments d'affichage des photos sur la page d'accueil
+/* function motaphoto_override_query( $wp_query ) {
+    if( $wp_query->is_main_query() && ! is_admin() && is_front_page() ): 
+        $wp_query->set( 'posts_per_page', 12 );
+        $wp_query->set( 'tax_query', '' );
+    endif;
+}
+add_action( 'pre_get_posts', 'motaphoto_override_query' ); */
+
+include get_template_directory() . '/includes/ajax.php';
 
 
 
